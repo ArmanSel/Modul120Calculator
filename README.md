@@ -1,2 +1,4 @@
 # Modul120Calculator
-Calculator Exam for Modul 120
+### Made by Arman-Din Selimovic
+
+This calculator was programmed in JavaFX for the exam Modul120Calculator.
