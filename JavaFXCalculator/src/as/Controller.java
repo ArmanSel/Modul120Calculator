@@ -13,10 +13,12 @@ import javafx.stage.Stage;
 
 public class Controller {
     public Label lblResult;
+    Double sum1 = 0.0;
+    Double sum2 = 0.0;
+    Double calcresults;
 
     public void onBtn(ActionEvent actionEvent){
         Button btn = (Button) actionEvent.getSource();
-        Double sum;
 
         switch (btn.getText()){
 
@@ -153,10 +155,23 @@ public class Controller {
                     break;
                 }
 
+            case "=":
+                
+                sum2 = Double.parseDouble(lblResult.getText());
+                calcresults = sum1 + sum2;
+                lblResult.setText(String.valueOf(calcresults));
+                break;
+
             case "+":
 
                 if (lblResult.getText().isEmpty()){
                     break;
+                }
+                else {
+                    sum1 = Double.parseDouble(lblResult.getText());
+                    lblResult.setText("0");
+
+
                 }
             }
         }
