@@ -9,14 +9,14 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 // Bei jeder Zahl if statement machen das man bei 0 die Zahl replaced [X]
-// Additition [X]
+// Rechnung fertig [X]
 
 public class Controller {
     public Label lblResult;
     Double sum1 = 0.0;
     Double sum2 = 0.0;
     Double calcresults;
-    private String operator = "+";
+    private String operator = "";
 
     public void onBtn(ActionEvent actionEvent){
         Button btn = (Button) actionEvent.getSource();
@@ -163,11 +163,14 @@ public class Controller {
                 switch (operator){
                     // case "+": lblResult.setText((sum1+sum2) + "");
                     // break;
-                    case "-": lblResult.setText((sum1-sum2) + "");
+                    case "-": calcresults = (sum1-sum2);
+                        lblResult.setText(String.valueOf(calcresults));
                         break;
-                    case "*": lblResult.setText((sum1*sum2) + "");
+                    case "*": calcresults = (sum1*sum2);
+                        lblResult.setText(String.valueOf(calcresults));
                         break;
-                    case "/": lblResult.setText((sum1/sum2) + "");
+                    case "/": calcresults = (sum1/sum2);
+                        lblResult.setText(String.valueOf(calcresults));
                         break;
                     case "+": calcresults = (sum1+sum2);
                         lblResult.setText(String.valueOf(calcresults));
@@ -182,10 +185,53 @@ break;
                 else{
                     sum1 = Double.parseDouble(lblResult.getText());
                     lblResult.setText("0");
+                    operator = "+";
 
 
                 }
                 break;
-            }
+
+            case "/":
+
+                if (lblResult.getText().isEmpty()){
+                    break;
+                }
+                else{
+                    sum1 = Double.parseDouble(lblResult.getText());
+                    lblResult.setText("0");
+                    operator = "/";
+
+
+                }
+                break;
+
+            case "-":
+
+                if (lblResult.getText().isEmpty()){
+                    break;
+                }
+                else{
+                    sum1 = Double.parseDouble(lblResult.getText());
+                    lblResult.setText("0");
+                    operator = "-";
+
+
+                }
+                break;
+
+            case "*":
+
+                if (lblResult.getText().isEmpty()){
+                    break;
+                }
+                else{
+                    sum1 = Double.parseDouble(lblResult.getText());
+                    lblResult.setText("0");
+                    operator = "*";
+
+
+                }
+                break;
+        }
         }
     }
