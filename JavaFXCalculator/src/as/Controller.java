@@ -327,4 +327,55 @@ break;
         backgroundWindow.show();
 
     }
+
+    public void setGlobalKeyPressed(KeyEvent keyEvent) {
+
+                switch (keyEvent.getCode()) {
+                    case DIGIT0:
+                        btn0.fire();
+
+                        break;
+                    case DIGIT1:
+                        btn1.fire();
+
+                        break;
+                    case DIGIT2:
+                        btn2.fire();
+
+                        break;
+                    case DIGIT3:
+                        btn3.fire();
+
+                        break;
+                    case DIGIT4:
+                        btn4.fire();
+
+                        break;
+                    case DIGIT5:
+                        btn5.fire();
+
+                        break;
+                    case DIGIT6:
+                        btn6.fire();
+
+                        break;
+                    case DIGIT7:
+                        btn7.fire();
+                        ;
+                    case DIGIT8:
+                        btn8.fire();
+
+                        break;
+                    case DIGIT9:
+                        btn9.fire();
+
+                        break;
+                    case PERIOD:
+                        btndot.fire();
+
+                        break;
+
+                }
+                keyEvent.consume();
+            }
 }
